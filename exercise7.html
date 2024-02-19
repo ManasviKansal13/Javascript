@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Greeting Function</h2>
+    <h2>Convert to farehnheit</h2>
+    <button onclick="greet();">Greet</button>
+    <script>
+        function greet(Name){
+            if(!Name) console.log("Hi,there!");
+            else console.log(`Hello ${Name}`);
+        }
+        greet('Manasvi');
+        greet('Baby');
+        function CtoF(num){
+            return (num*(9/5))+32;
+        }
+        function FtoC(num){
+            return (num-32)*5/9;
+        }
+        function ChangeT(num,unit){
+            if(unit==='F') return CtoF(num);
+            else if(unit==='C') return FtoC(num);
+        }
+        console.log(CtoF(25));
+        console.log(FtoC(86));
+        console.log(ChangeT(25,'F'));
+        console.log(ChangeT(86,'C'));
+    </script>
+</body>
+</html>

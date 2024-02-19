@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Encapsulation</title>
+    <script>
+        class Manasvi{
+            constructor(){
+                var bal;
+            }
+            setbal(a){
+                this.bal=a;
+            }
+            getbal(){
+                return this.bal;
+            }
+            credit(a){
+                this.bal=this.bal+a;
+            }
+            debit(a){
+                if(a>this.bal)
+                    alert("Insufficient Balance");
+                else{
+                    this.bal-=a;
+                    document.write(this.bal);
+                }
+            }
+        }
+        var ob=new Manasvi();
+        ob.setbal(1000);
+        document.write(ob.getbal()+"<br>");
+        ob.credit(10000);
+        ob.debit(15000);
+    </script>
+</head>
+<body>
+    <!-- encapsulation:use to hide the data. Eg. ATM
+    it is private.code(input)+data(output) together
+    It is a way to wrap code nd data together to process.
+    var or let: supports private 
+-->
+<!-- this  is belong to class... this ke bina work ni krega... this.bal -->
+</body>
+</html>

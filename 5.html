@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <h2>Cart Quantity</h2>
+    <button onclick="
+        console.log(`Cart Quantity is ${c}`);
+    ">Show Quantity</button>
+    <button onclick="update(1);">Add to Cart</button>
+    <button onclick="update(2);">+2</button>
+    <button onclick="update(3);">+3</button>
+    <button onclick="update(4);">+4</button>
+    <button onclick="update(5);">+5</button>
+    <button onclick="update(-2);">-2</button>
+    <button onclick="update(-3);">-3</button>
+    <button onclick="update(-1);">Remove from Cart</button>
+    <button onclick="
+        c=0;
+        console.log('Cart is Reset.');
+        console.log(`Cart Quantity is ${c}`);
+    ">Reset</button>
+    <script>
+        let c=0;
+        function update(q){
+            if(c+q>10){
+                alert("The cart is full");
+                return;
+            }
+            else if(c+q<0){
+                alert("Not enough items");
+                return;
+            } 
+            else {
+                c+=q;
+                console.log(`Cart Quantity is ${c}`);
+            }
+        }
+    </script>
+</body>
+</html>

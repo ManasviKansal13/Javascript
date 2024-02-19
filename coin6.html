@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+</head>
+<body>
+    <h2>Head or Tail</h2>
+    <button onclick="Game('Head');">Head</button>
+    <button onclick="Game('Tail');">Tail</button>
+    <script>
+        let score=JSON.parse(localStorage.getItem('score'))||{
+            Wins:0,
+            Losses:0
+        };
+        function Game(guess){
+            const n=Math.random();
+            const ans=n<0.5?'Head':'Tail';
+            console.log(guess===ans?'You Win.':'You Lose.');
+            guess===ans?score.Wins++:score.Losses++;
+            console.log(score);
+            localStorage.setItem('score',JSON.stringify(score));
+        }
+    </script>
+</body>
+</html>
